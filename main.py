@@ -17,7 +17,7 @@ C = 0.01
 LR = 1e-3
 N_EPOCHS = 30
 BATCH_SIZE = 64
-MAX_PER_CLASS = 1000    # test nhanh
+MAX_PER_CLASS = None    # test nhanh
 
 def load_split(split_dir: Path) -> tuple[np.ndarray, np.ndarray]:
     X_list, y_list = [], []
@@ -106,7 +106,7 @@ def run_assignment_2(X_train, y_train, X_test, y_test, scaler):
 
     print(f"\nTraining scikit-learn SVM  (C={C}, kernel=linear)...\n")
     t0 = time.time()
-    clf = SVC(C=C, kernel="linear", random_state=42, max_iter=2000)
+    clf = SVC(C=C, kernel="linear", random_state=42, max_iter=5000)
     clf.fit(X_tr_s, y_train)
     print(f"\n  Training completed in {time.time() - t0:.1f} seconds")
 
