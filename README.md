@@ -25,7 +25,12 @@ python main.py
 
 | Metric    | NumPy SVM | scikit-learn SVM |
 |-----------|:---------:|:----------------:|
-| Accuracy  | 79.17%    | 78.69%           |
-| Precision | 76.97%    | 75.35%           |
-| Recall    | 95.13%    | 97.95%           |
-| F1 Score  | 85.09%    | 85.17%           |
+| Accuracy  | 82.53%    | 75.48%           |
+| Precision | 88.08%    | 72.07%           |
+| Recall    | 83.33%    | 99.23%           |
+| F1 Score  | 85.64%    | 83.50%           |
+
+## Nhận xét
+- **NumPy SVM** cho Accuracy và Precision cao hơn, model cân bằng hơn giữa các metric
+- **scikit-learn SVM** có Recall rất cao (99.23%) — gần như phát hiện được toàn bộ ca Pneumonia, nhưng Precision thấp hơn (nhiều dự đoán sai hơn)
+- Sự khác biệt do 2 model dùng thuật toán tối ưu khác nhau: SGD (NumPy) vs SMO (sklearn)
